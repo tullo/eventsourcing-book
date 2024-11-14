@@ -1,11 +1,12 @@
 {
-  "name": "Java 17",
+  "name": "Java 19",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "17",
+      "version": "19",
       "installMaven": "true",
       "installGradle": "false"
-    }
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2":{} // install docker
   }
 }
