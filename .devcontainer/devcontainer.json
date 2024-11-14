@@ -1,9 +1,9 @@
 {
-  "name": "Java 19",
+  "name": "Java 21",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "19",
+      "version": "21",
       "installMaven": "true",
       "installGradle": "false"
     },
