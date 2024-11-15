@@ -1,0 +1,2327 @@
+{
+  "slices": [
+    {
+      "id": "3458764606960617358",
+      "title": "slice: Cancel Order",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764606960617352",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Cancel Order",
+          "title": "Cancel Order",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606917350006",
+              "type": "OUTBOUND",
+              "title": "Order cancelled",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606916585081",
+              "type": "INBOUND",
+              "title": "backoffice admin",
+              "elementType": "SCREEN"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "events.forEach((eventData)=>{\n    let event = eventData.data\n    switch(eventData.type) {\n      \n    }}\n  )\n    ",
+            "placement": "MAIN",
+            "initialValue": "false",
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764606917350006",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Cancel Order",
+          "title": "Order cancelled",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606960617352",
+              "type": "INBOUND",
+              "title": "Cancel Order",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [
+        {
+          "id": "3458764606916585081",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Cancel Order",
+          "title": "backoffice admin",
+          "fields": [
+            {
+              "name": "city",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "houseNumber",
+              "type": "Int",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderedProducts",
+              "type": "Custom",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "List",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "paymentId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": true,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "street",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "surname",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "totalPrice",
+              "type": "Double",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "zipCode",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606960617352",
+              "type": "OUTBOUND",
+              "title": "Cancel Order",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "specifications": [],
+      "actors": [
+        {
+          "name": "admin",
+          "authzRequired": false
+        }
+      ],
+      "aggregates": [
+        "Backoffice"
+      ]
+    },
+    {
+      "id": "3458764606919031409",
+      "title": "slice: Ship Order",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764606919031406",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Ship Order",
+          "title": "Ship Order",
+          "fields": [
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606917199903",
+              "type": "OUTBOUND",
+              "title": "Order shipped",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606918815662",
+              "type": "INBOUND",
+              "title": "backoffice",
+              "elementType": "SCREEN"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "result.enabled = false\nevents.forEach((eventData)=>{\n    let event = eventData.data\n    switch(eventData.type) {\n      \n       \tcase 'ShippingRequestedEvent':\n       \t\tresult.enabled = true\n    \treturn;\n        \n       \tcase 'ShippingPreparedEvent':\n       \t\tresult.enabled = false\n    \treturn;\n        \n    }}\n  )\n    ",
+            "placement": "MAIN",
+            "initialValue": "false",
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764606917199903",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Ship Order",
+          "title": "Order shipped",
+          "fields": [
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606919030967",
+              "type": "OUTBOUND",
+              "title": "shippable orders",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764606919031406",
+              "type": "INBOUND",
+              "title": "Ship Order",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [
+        {
+          "id": "3458764606918815662",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Ship Order",
+          "title": "backoffice",
+          "fields": [
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606919031406",
+              "type": "OUTBOUND",
+              "title": "Ship Order",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764606919030967",
+              "type": "INBOUND",
+              "title": "shippable orders",
+              "elementType": "READMODEL"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "specifications": [
+        {
+          "id": "3458764606950858867",
+          "sliceName": "slice: Ship Order",
+          "title": "spec: Ship Order Aggregate Test",
+          "given": [
+            {
+              "title": "Shipping prepared",
+              "id": "3458764606950858883",
+              "index": 0,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "orderId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "excludeFromApi": false
+                }
+              ],
+              "linkedId": "3458764606918335598"
+            },
+            {
+              "title": "Shipping requested",
+              "id": "3458764606950858876",
+              "index": 0,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "deliveryTrackingId",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "orderId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "excludeFromApi": false
+                }
+              ],
+              "linkedId": "3458764606918579343"
+            }
+          ],
+          "when": [
+            {
+              "title": "Ship Order",
+              "id": "3458764606950858868",
+              "index": 0,
+              "type": "SPEC_COMMAND",
+              "fields": [
+                {
+                  "name": "deliveryTrackingId",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "orderId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "excludeFromApi": false
+                }
+              ],
+              "linkedId": "3458764606919031406"
+            }
+          ],
+          "then": [
+            {
+              "title": "Order shipped",
+              "id": "3458764606950858872",
+              "index": 0,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "deliveryTrackingId",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "orderId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "excludeFromApi": false
+                }
+              ],
+              "linkedId": "3458764606917199903"
+            }
+          ],
+          "comments": [
+            {
+              "description": "            comment"
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "name": "clerk",
+          "authzRequired": false
+        }
+      ],
+      "aggregates": [
+        "Backoffice"
+      ]
+    },
+    {
+      "id": "3458764606919031131",
+      "title": "slice: shippable orders",
+      "context": "",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764606919030967",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: shippable orders",
+          "title": "shippable orders",
+          "fields": [
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "example": "",
+              "mapping": "Shipping requested",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606918815662",
+              "type": "OUTBOUND",
+              "title": "backoffice",
+              "elementType": "SCREEN"
+            },
+            {
+              "id": "3458764606917199903",
+              "type": "INBOUND",
+              "title": "Order shipped",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606918335598",
+              "type": "INBOUND",
+              "title": "Shipping prepared",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606918579343",
+              "type": "INBOUND",
+              "title": "Shipping requested",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": true,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "events.forEach((eventData)=>{\n    let event = eventData.data\n    switch(eventData.type) {\n   \n       \tcase 'OrderShippedEvent':\n\t\t\t\n\t\tthis.resultList = this.resultList.filter(it => it.deliveryTrackingId !== event.deliveryTrackingId)\n    \treturn;\n        \n       \tcase 'ShippingRequestedEvent':\n\t\t\tthis.resultList.push({\n\t\t\tdeliveryTrackingId:event.deliveryTrackingId,\n\t\t\torderId:event.orderId\n\t\t})\n    \treturn;\n        \n        \n    }\n})",
+            "placement": "RIGHT",
+            "renderFunction": "(data)=>{ return { key: \"deliveryTrackingId\"}}",
+            "initialValue": null,
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [
+        {
+          "id": "3458764606918815662",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: shippable orders",
+          "title": "backoffice",
+          "fields": [
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606919031406",
+              "type": "OUTBOUND",
+              "title": "Ship Order",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764606919030967",
+              "type": "INBOUND",
+              "title": "shippable orders",
+              "elementType": "READMODEL"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Backoffice"
+      ]
+    },
+    {
+      "id": "3458764606918579543",
+      "title": "slice: prepared orders to ship",
+      "context": "",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764606918579542",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: prepared orders to ship",
+          "title": "Orders to shop",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606918579532",
+              "type": "OUTBOUND",
+              "title": "Shipping Processor",
+              "elementType": "AUTOMATION"
+            },
+            {
+              "id": "3458764606918335598",
+              "type": "INBOUND",
+              "title": "Shipping prepared",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": true,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "events.forEach((eventData)=>{\n    let event = eventData.data\n    switch(eventData.type) {\n   \n       \tcase 'ShippingPreparedEvent':\n\t\t\tthis.resultList.push({\n\t\t\torderId:event.orderId\n\t\t})\n    \treturn;\n        \n    }\n})",
+            "placement": "MAIN",
+            "renderFunction": "",
+            "initialValue": null,
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [],
+      "processors": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Backoffice"
+      ]
+    },
+    {
+      "id": "3458764606918579541",
+      "title": "slice: Ship Requested",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764606918579539",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Ship Requested",
+          "title": "request shipping",
+          "fields": [
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606918579343",
+              "type": "OUTBOUND",
+              "title": "Shipping requested",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606918579532",
+              "type": "INBOUND",
+              "title": "Shipping Processor",
+              "elementType": "AUTOMATION"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "events.forEach((eventData)=>{\n    let event = eventData.data\n    switch(eventData.type) {\n      \n    }}\n  )\n    ",
+            "placement": "MAIN",
+            "initialValue": "false",
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764606918579343",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Ship Requested",
+          "title": "Shipping requested",
+          "fields": [
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606919030967",
+              "type": "OUTBOUND",
+              "title": "shippable orders",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764606918579539",
+              "type": "INBOUND",
+              "title": "request shipping",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [],
+      "processors": [
+        {
+          "id": "3458764606918579532",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Ship Requested",
+          "title": "Shipping Processor",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "deliveryTrackingId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": true,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "AUTOMATION",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606918579539",
+              "type": "OUTBOUND",
+              "title": "request shipping",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764606918579542",
+              "type": "INBOUND",
+              "title": "Orders to shop",
+              "elementType": "READMODEL"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Backoffice"
+      ]
+    },
+    {
+      "id": "3458764606918335815",
+      "title": "slice: Prepare Shipping",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764606918335813",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Prepare Shipping",
+          "title": "Prepare shipping",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606918335598",
+              "type": "OUTBOUND",
+              "title": "Shipping prepared",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606917484832",
+              "type": "INBOUND",
+              "title": "backoffice",
+              "elementType": "SCREEN"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "events.forEach((eventData)=>{\n    let event = eventData.data\n    switch(eventData.type) {\n      \n       \tcase 'FulfillmentPreparedEvent':\n       \t\tresult.enabled = true\n    \treturn;\n        \n    }}\n  )\n    ",
+            "placement": "MAIN",
+            "initialValue": "false",
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764606918335598",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Prepare Shipping",
+          "title": "Shipping prepared",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606919030967",
+              "type": "OUTBOUND",
+              "title": "shippable orders",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764606918579542",
+              "type": "OUTBOUND",
+              "title": "Orders to shop",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764606917717283",
+              "type": "OUTBOUND",
+              "title": "fulfillments prepared",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764606918335813",
+              "type": "INBOUND",
+              "title": "Prepare shipping",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [
+        {
+          "id": "3458764606917484832",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Prepare Shipping",
+          "title": "backoffice",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "totalPrice",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "surname",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "street",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "houseNumber",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "zipCode",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606918335813",
+              "type": "OUTBOUND",
+              "title": "Prepare shipping",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764606917717283",
+              "type": "INBOUND",
+              "title": "fulfillments prepared",
+              "elementType": "READMODEL"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "specifications": [
+        {
+          "id": "3458764607070786479",
+          "sliceName": "slice: Prepare Shipping",
+          "title": "spec:  Prepare Shipping",
+          "given": [
+            {
+              "title": "Fulfillment Prepared",
+              "id": "3458764607070786496",
+              "index": 0,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "city",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "houseNumber",
+                  "type": "Int",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "paymentId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "street",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "totalPrice",
+                  "type": "Double",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "zipCode",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "surname",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "orderedProducts",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "List",
+                  "idAttribute": false,
+                  "excludeFromApi": false
+                },
+                {
+                  "name": "orderId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "excludeFromApi": false
+                }
+              ],
+              "linkedId": "3458764606917198984"
+            }
+          ],
+          "when": [
+            {
+              "title": "Prepare shipping",
+              "id": "3458764607070786484",
+              "index": 0,
+              "type": "SPEC_COMMAND",
+              "fields": [
+                {
+                  "name": "orderId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "excludeFromApi": false
+                }
+              ],
+              "linkedId": "3458764606918335813"
+            }
+          ],
+          "then": [
+            {
+              "title": "Shipping prepared",
+              "id": "3458764607070786493",
+              "index": 0,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "orderId",
+                  "type": "UUID",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "excludeFromApi": false
+                }
+              ],
+              "linkedId": "3458764606918335598"
+            }
+          ],
+          "comments": []
+        }
+      ],
+      "actors": [
+        {
+          "name": "clerk",
+          "authzRequired": false
+        }
+      ],
+      "aggregates": [
+        "Backoffice"
+      ]
+    },
+    {
+      "id": "3458764606917717285",
+      "title": "slice: fulfillments prepared",
+      "context": "",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764606917717283",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: fulfillments prepared",
+          "title": "fulfillments prepared",
+          "fields": [
+            {
+              "name": "city",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "houseNumber",
+              "type": "Int",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "paymentId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "street",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "totalPrice",
+              "type": "Double",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "zipCode",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": true,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "surname",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderedProducts",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "List",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606917484832",
+              "type": "OUTBOUND",
+              "title": "backoffice",
+              "elementType": "SCREEN"
+            },
+            {
+              "id": "3458764606917198984",
+              "type": "INBOUND",
+              "title": "Fulfillment Prepared",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606918335598",
+              "type": "INBOUND",
+              "title": "Shipping prepared",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": true,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "events.forEach((eventData)=>{\n    let event = eventData.data\n    switch(eventData.type) {\n   \n       \tcase 'FulfillmentPreparedEvent':\n\t\t\tthis.resultList.push({\n\t\t\tcity:event.city,\n\t\t\thouseNumber:event.houseNumber,\n\t\t\torderedProducts:event.orderedProducts,\n\t\t\torderId:event.orderId,\n\t\t\tpaymentId:event.paymentId,\n\t\t\tstreet:event.street,\n\t\t\ttotalPrice:event.totalPrice,\n\t\t\tzipCode:event.zipCode,\n\t\t\tname:event.name,\n\t\t\tsurname:event.surname\n\t\t})\n    \treturn;\n        \n       \tcase 'ShippingPreparedEvent':\n\t\t\tthis.resultList = this.resultList.filter(it => it.orderId !== event.orderId)\n    \treturn;\n        \n    }\n})",
+            "placement": "MAIN",
+            "renderFunction": "(data)=>{ return { key: \"orderId\"}}",
+            "initialValue": null,
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [
+        {
+          "id": "3458764606917484832",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: fulfillments prepared",
+          "title": "backoffice",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "totalPrice",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "surname",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "street",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "houseNumber",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "zipCode",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606918335813",
+              "type": "OUTBOUND",
+              "title": "Prepare shipping",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764606917717283",
+              "type": "INBOUND",
+              "title": "fulfillments prepared",
+              "elementType": "READMODEL"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Backoffice"
+      ]
+    },
+    {
+      "id": "3458764606916731732",
+      "title": "slice: Submit Order",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764606916731730",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Submit Order",
+          "title": "Prepare fulfillment",
+          "fields": [
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "paymentId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "totalPrice",
+              "type": "Double",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "street",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "houseNumber",
+              "type": "Int",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "zipCode",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "surname",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderedProducts",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "List",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606917198984",
+              "type": "OUTBOUND",
+              "title": "Fulfillment Prepared",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764606916731726",
+              "type": "INBOUND",
+              "title": "Order Processor",
+              "elementType": "AUTOMATION"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": true,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764606917198984",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Submit Order",
+          "title": "Fulfillment Prepared",
+          "fields": [
+            {
+              "name": "city",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "houseNumber",
+              "type": "Int",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "paymentId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "street",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "totalPrice",
+              "type": "Double",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "zipCode",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "surname",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderedProducts",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "List",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606917717283",
+              "type": "OUTBOUND",
+              "title": "fulfillments prepared",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764606916731730",
+              "type": "INBOUND",
+              "title": "Prepare fulfillment",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [],
+      "processors": [
+        {
+          "id": "3458764606916731726",
+          "domain": "",
+          "modelContext": "Backoffice",
+          "context": "INTERNAL",
+          "slice": "slice: Submit Order",
+          "title": "Order Processor",
+          "fields": [
+            {
+              "name": "city",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "houseNumber",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "paymentId",
+              "type": "UUID",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "street",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "surname",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "totalPrice",
+              "type": "Double",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "zipCode",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "excludeFromApi": false
+            },
+            {
+              "name": "orderedProducts",
+              "type": "UUID",
+              "example": "",
+              "mapping": "orderedProducts",
+              "optional": false,
+              "generated": false,
+              "cardinality": "List",
+              "idAttribute": false,
+              "excludeFromApi": false
+            }
+          ],
+          "type": "AUTOMATION",
+          "description": "",
+          "aggregate": "Backoffice",
+          "aggregateDependencies": [
+            "Backoffice"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764606916731730",
+              "type": "OUTBOUND",
+              "title": "Prepare fulfillment",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "projection": "",
+            "placement": "MAIN",
+            "initialValue": null,
+            "css": null,
+            "pageTemplate": null,
+            "order": -1,
+            "activeByDefault": true
+          }
+        }
+      ],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Backoffice"
+      ]
+    }
+  ],
+  "flows": [],
+  "aggregates": [
+    {
+      "id": "3458764606919357418",
+      "title": "Backoffice",
+      "fields": [
+        {
+          "name": "orderId",
+          "type": "UUID",
+          "example": "",
+          "mapping": "",
+          "optional": false,
+          "generated": false,
+          "cardinality": "Single",
+          "idAttribute": true,
+          "excludeFromApi": false
+        }
+      ],
+      "service": null,
+      "type": "AGGREGATE"
+    }
+  ],
+  "actors": [
+    {
+      "id": "3458764607011104902",
+      "title": "admin",
+      "type": "ACTOR"
+    },
+    {
+      "id": "3458764607011104899",
+      "title": "clerk",
+      "type": "ACTOR"
+    },
+    {
+      "id": "3458764606960205980",
+      "title": "admin",
+      "type": "ACTOR"
+    },
+    {
+      "id": "3458764606960178764",
+      "title": "clerk",
+      "type": "ACTOR"
+    }
+  ],
+  "context": "Backoffice",
+  "codeGen": {
+    "application": "Backoffice",
+    "domain": "",
+    "rootPackage": "de.nebulit.backoffice"
+  },
+  "boardId": null
+}
