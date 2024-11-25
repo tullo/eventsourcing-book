@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 data class ShipRequestedPayload(var deliveryTrackingId: String, var orderId: UUID)
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606918579539
 */
 @RestController
 class RequestShippingRessource(private var commandGateway: CommandGateway) {

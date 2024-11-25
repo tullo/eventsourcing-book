@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606918579532
 */
 @Component
 class ShippingProcessorProcessor : Processor {

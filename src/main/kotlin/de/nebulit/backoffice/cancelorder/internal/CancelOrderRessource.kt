@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 data class CancelOrderPayload(var orderId: UUID)
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606960617352
 */
 @RestController
 class CancelOrderRessource(private var commandGateway: CommandGateway) {

@@ -5,6 +5,6 @@ import java.util.UUID
 import org.axonframework.modelling.command.TargetAggregateIdentifier
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606960617352
 */
 data class CancelOrderCommand(@TargetAggregateIdentifier var orderId: UUID) : Command

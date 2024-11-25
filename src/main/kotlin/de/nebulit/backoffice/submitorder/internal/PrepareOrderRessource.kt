@@ -1,6 +1,6 @@
 package de.nebulit.backoffice.submitorder.internal
 
-import de.nebulit.backoffice.domain.commands.submitorder.PrepareFulfillmentCommand
+import de.nebulit.backoffice.domain.commands.submitorder.PrepareOrderCommand
 import java.util.UUID
 import java.util.concurrent.CompletableFuture
 import mu.KotlinLogging
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 data class SubmitOrderPayload(
-    var orderId: UUID,
     var paymentId: UUID,
     var totalPrice: Double,
     var street: String,
@@ -22,21 +21,22 @@ data class SubmitOrderPayload(
     var city: String,
     var name: String,
     var surname: String,
-    var orderedProducts: List<UUID>
+    var orderedProducts: List<UUID>,
+    var customerId: UUID,
+    var orderId: UUID
 )
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606916731730
 */
 @RestController
-class PrepareFulfillmentRessource(private var commandGateway: CommandGateway) {
+class PrepareOrderRessource(private var commandGateway: CommandGateway) {
 
   var logger = KotlinLogging.logger {}
 
   @CrossOrigin
   @PostMapping("/debug/submitorder")
   fun processDebugCommand(
-      @RequestParam orderId: UUID,
       @RequestParam paymentId: UUID,
       @RequestParam totalPrice: Double,
       @RequestParam street: String,
@@ -45,11 +45,12 @@ class PrepareFulfillmentRessource(private var commandGateway: CommandGateway) {
       @RequestParam city: String,
       @RequestParam name: String,
       @RequestParam surname: String,
-      @RequestParam orderedProducts: List<UUID>
+      @RequestParam orderedProducts: List<UUID>,
+      @RequestParam customerId: UUID,
+      @RequestParam orderId: UUID
   ): CompletableFuture<Any> {
     return commandGateway.send(
-        PrepareFulfillmentCommand(
-            orderId,
+        PrepareOrderCommand(
             paymentId,
             totalPrice,
             street,
@@ -58,7 +59,9 @@ class PrepareFulfillmentRessource(private var commandGateway: CommandGateway) {
             city,
             name,
             surname,
-            orderedProducts))
+            orderedProducts,
+            customerId,
+            orderId))
   }
 
   @CrossOrigin
@@ -68,8 +71,7 @@ class PrepareFulfillmentRessource(private var commandGateway: CommandGateway) {
       @RequestBody payload: SubmitOrderPayload
   ): CompletableFuture<Any> {
     return commandGateway.send(
-        PrepareFulfillmentCommand(
-            orderId = payload.orderId,
+        PrepareOrderCommand(
             paymentId = payload.paymentId,
             totalPrice = payload.totalPrice,
             street = payload.street,
@@ -78,6 +80,8 @@ class PrepareFulfillmentRessource(private var commandGateway: CommandGateway) {
             city = payload.city,
             name = payload.name,
             surname = payload.surname,
-            orderedProducts = payload.orderedProducts))
+            orderedProducts = payload.orderedProducts,
+            customerId = payload.customerId,
+            orderId = payload.orderId))
   }
 }

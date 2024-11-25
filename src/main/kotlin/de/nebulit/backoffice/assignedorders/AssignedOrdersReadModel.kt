@@ -1,4 +1,4 @@
-package de.nebulit.backoffice.fulfillmentsprepared
+package de.nebulit.backoffice.assignedorders
 
 import jakarta.persistence.CollectionTable
 import jakarta.persistence.Column
@@ -9,13 +9,13 @@ import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import java.util.UUID
 
-class FulfillmentsPreparedReadModelQuery()
+class AssignedOrdersReadModelQuery()
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764608123111077
 */
 @Entity
-class FulfillmentsPreparedReadModelEntity {
+class AssignedOrdersReadModelEntity {
   @Column(name = "city") var city: String? = null
 
   @Column(name = "houseNumber") var houseNumber: Int? = null
@@ -37,11 +37,12 @@ class FulfillmentsPreparedReadModelEntity {
   // TODO review type mapping
   @ElementCollection(fetch = FetchType.EAGER)
   @CollectionTable(
-      name = "fulfillmentsprepared_ordered_products",
-      joinColumns = [JoinColumn(name = "aggregateId")])
-  var orderedProducts: MutableList<UUID> = mutableListOf()
+      name = "assignedorders_ordered_products", joinColumns = [JoinColumn(name = "aggregateId")])
+  var orderedProducts: List<UUID> = mutableListOf()
 
   @Id @Column(name = "orderId") var orderId: UUID? = null
+
+  @Column(name = "customerId") var customerId: UUID? = null
 }
 
-data class FulfillmentsPreparedReadModel(val data: List<FulfillmentsPreparedReadModelEntity>)
+data class AssignedOrdersReadModel(val data: List<AssignedOrdersReadModelEntity>)

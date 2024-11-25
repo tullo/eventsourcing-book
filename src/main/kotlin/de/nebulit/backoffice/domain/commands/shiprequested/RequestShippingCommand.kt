@@ -5,7 +5,7 @@ import java.util.UUID
 import org.axonframework.modelling.command.TargetAggregateIdentifier
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606918579539
 */
 data class RequestShippingCommand(
     var deliveryTrackingId: String,

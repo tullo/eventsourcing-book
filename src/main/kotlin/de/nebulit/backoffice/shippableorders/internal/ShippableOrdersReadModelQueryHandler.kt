@@ -6,7 +6,7 @@ import org.axonframework.queryhandling.QueryHandler
 import org.springframework.stereotype.Component
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606919030967
 */
 @Component
 class ShippableOrdersReadModelQueryHandler(

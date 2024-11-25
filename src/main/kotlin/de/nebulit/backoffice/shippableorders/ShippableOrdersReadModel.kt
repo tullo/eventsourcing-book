@@ -8,7 +8,7 @@ import java.util.UUID
 class ShippableOrdersReadModelQuery()
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606919030967
 */
 @Entity
 class ShippableOrdersReadModelEntity {

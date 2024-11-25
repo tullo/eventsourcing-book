@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 data class PrepareShippingPayload(var orderId: UUID)
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606918335813
 */
 @RestController
 class PrepareShippingRessource(private var commandGateway: CommandGateway) {

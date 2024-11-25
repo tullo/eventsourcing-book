@@ -5,14 +5,14 @@ import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import java.util.UUID
 
-class OrdersToShopReadModelQuery()
+class OrdersToShipReadModelQuery()
 
 /*
-Boardlink:
+Boardlink: https://miro.com/app/board/uXjVLGjbeRk=/?moveToWidget=3458764606918579542
 */
 @Entity
-class OrdersToShopReadModelEntity {
+class OrdersToShipReadModelEntity {
   @Id @Column(name = "orderId") var orderId: UUID? = null
 }
 
-data class OrdersToShopReadModel(val data: List<OrdersToShopReadModelEntity>)
+data class OrdersToShipReadModel(val data: List<OrdersToShipReadModelEntity>)
